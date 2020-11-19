@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+    <h1 class="main_title">Main Learning Line</h1>
     <script>
         function abs(x) {        // Uma função para calcular o valor absoluto
             if (x >= 0)
@@ -17,7 +17,7 @@
             else
                 return -x;
         }
-        document.write("<div class='standard'>" + abs(10) + "</div>");
+        document.write(`<div class='standard'> <h1>Valor Absoluto</h1> <p>${abs(10)}</p>  </div>`);
 
         function fatorial(n) {  // Uma função para calcular o fatorial de um número
             var product = 1;
@@ -27,7 +27,7 @@
             }
             return product;
         }
-        document.write("<div class='standard'>" + fatorial(8) + "</div>");
+        document.write(`<div class='standard'> <h1>Fatorial</h1> ${fatorial(8)} </div>`);
 
         function testeDiv(text) {
             var t = document.getElementById("hello");
@@ -43,32 +43,32 @@
             p.appendChild(pre);
         }
 
-        testeDiv("teste");
+        testeDiv("Div construida por JS");
 
         function forca(f, m, a) {   // Uma função para calcular a força
-            var f = f;
-            var m = m;
-            var a = a;
-
             if ((f == "f") || (f == "F")) {
-                var resultado = "<p>" + m + "*" + a + " =  </p>";
+                var resultado = "<h1>Força: F = M x A</h1>";
+                resultado += "<p>" + m + "*" + a + " =  </p>";
                 resultado += "<p>" + m * a + "N" + "</p>";
                 return resultado;
             }
             else if ((a == "a") || (a == "A")) {
-                var resultado = `<p> ${f} / ${m} = </p>`;
+                var resultado = `<h1>Força: A = F / M</h1>`;
+                resultado += `<p> ${f} / ${m} = </p>`;
                 resultado += `<p>${f / m}</p>`;
-                return resultado + "m/s²";
+                return `${resultado}  m/s²`;
             }
             else if ((m == "m") || (m == "M")) {
-                var resultado = `<p> ${f} / ${a} =</p>`;
+                var resultado = `<h1>Força: M = F / A</h1>`;
+                resultado += `<p> ${f} / ${a} = </p>`;
                 resultado += `<p> ${f / a}</p>`;
-                return resultado + "Kg";
+                return `${resultado}  kg`;
             }
         }
-        document.write("<div class='standard'>" + forca("F", 10, 25) + "</div>");
-        document.write("<div class='standard'>" + forca(250, 10, "a") + "</div>");
-        document.write("<div class='standard'>" + forca(250, "m", 25) + "</div>");
+        // document.write("<div class='standard'>" + forca("F", 10, 25) + "</div>");
+        document.write(`<div class='standard'> ${forca("F", 10, 25)}  </div>`);
+        document.write(`<div class='standard'> ${forca(250, 10, "a")} </div>`);
+        document.write(`<div class='standard'> ${forca(250, "m", 25)} </div>`);
 
 
     </script>
