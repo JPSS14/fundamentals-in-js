@@ -70,6 +70,17 @@
         document.write(`<div class='standard'> ${forca(250, 10, "a")} </div>`);
         document.write(`<div class='standard'> ${forca(250, "m", 25)} </div>`);
 
+        function centavos(c) {  // Uma função que prova que existe diferença entre números com ponto flutuante em js
+            var teste1 = (c + 0.1) - c;
+            var teste2 = (c + 0.2) - (c + 0.1);
+            if (teste1 == teste2)
+                return `${teste1} == ${teste2}`;
+            else
+                return `${teste1} != ${teste2}`;
+        }
+        document.write(`<div class="standard"> <h1>Problema do ponto flutuante</h1>${centavos(0.1)}</div>`);
+
+        docment.write(`${later.toLocaleDateString()}`);
 
     </script>
 </body>
