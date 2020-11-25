@@ -84,7 +84,7 @@ body{
     padding: 10px 0;
 }
 
-#numeroFatorialForm{
+.input_standard{
     background: #111;
     border-color: var(--themeColor1);
     border-radius: 10px;

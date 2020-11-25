@@ -92,7 +92,7 @@
         function fatorialForm() {
             var text = `<div class="standard" id="fatorialForm">
             <h1>Fatorial Form</h1>
-            <input type="text" id="numeroFatorialForm" placeholder="Digite um número">
+            <input type="text" id="numeroFatorialForm" placeholder="Digite um número" class="input_standard">
             <button class="btn" onclick="fatorialFormCount()">Calcular</button>
             </div>`;
             return text;
@@ -110,7 +110,30 @@
             p.appendChild(pre);
         }
         document.write(fatorialForm());
-        // document.write(fatorialFormCount());
+
+        function decimalBinario(numero){
+            return (numero >>> 0).toString(2);
+        }
+
+        document.write(`<div class="standard"><h1>Decimal para binário</h1> ${decimalBinario(10)} </div>`);
+
+        
+        // function decimalBinarioForm() {
+        //     var text = `<div class="standard" id="decimalBinarioForm">
+        //     <h1>Decimal para binário</h1>
+        //     <input type="text" id="numeroDecimalBinario" placeholder="Digite em um número" class="input_standard">
+        //     <button class="btn" onclick="decimalBinario()">Calcular</button>
+        //     </div>`;
+        //     return text;
+        // }
+
+        // function decimalBinarioFormCount(){
+        //     var form = document.getElementById("decimalBinarioForm");
+        //     var numero = parseFloat(document.getElementById("numeroDecimalBinario").value);
+        //     document.body.appendChild(form);
+        //     var result = 
+        // }
+        // document.write(decimalBinarioForm());
     </script>
 </body>
 
