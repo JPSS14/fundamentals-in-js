@@ -111,29 +111,35 @@
         }
         document.write(fatorialForm());
 
-        function decimalBinario(numero){
+        function decimalBinario(numero) {
             return (numero >>> 0).toString(2);
         }
 
-        document.write(`<div class="standard"><h1>Decimal para binário</h1> ${decimalBinario(10)} </div>`);
+        document.write(`<div class="standard"><h1>Decimal para binário</h1> ${decimalBinario(11)} </div>`);
 
-        
-        // function decimalBinarioForm() {
-        //     var text = `<div class="standard" id="decimalBinarioForm">
-        //     <h1>Decimal para binário</h1>
-        //     <input type="text" id="numeroDecimalBinario" placeholder="Digite em um número" class="input_standard">
-        //     <button class="btn" onclick="decimalBinario()">Calcular</button>
-        //     </div>`;
-        //     return text;
-        // }
 
-        // function decimalBinarioFormCount(){
-        //     var form = document.getElementById("decimalBinarioForm");
-        //     var numero = parseFloat(document.getElementById("numeroDecimalBinario").value);
-        //     document.body.appendChild(form);
-        //     var result = 
-        // }
-        // document.write(decimalBinarioForm());
+        function decimalBinarioForm() {
+            var text = `<div class="standard" id="decimalBinarioForm">
+            <h1>Decimal para binário</h1>
+            <input type="text" id="numeroDecimalBinario" placeholder="Digite em um número" class="input_standard">
+            <button class="btn" onclick="decimalBinarioFormCount()">Calcular</button>
+            </div>`;
+            return text;
+        }
+
+        function decimalBinarioFormCount() {
+            var form = document.getElementById("decimalBinarioForm");
+            var numero = parseFloat(document.getElementById("numeroDecimalBinario").value);
+            document.body.appendChild(form);
+            var result = decimalBinario(numero);
+            var exemplo = `${numero} = ${result}`;
+            var pre = document.createElement("p");
+            pre.id = "decimalBinarioResult";
+            var text = document.createTextNode(exemplo);
+            pre.appendChild(text);
+            form.appendChild(pre);
+        }
+        document.write(decimalBinarioForm());
     </script>
 </body>
 
