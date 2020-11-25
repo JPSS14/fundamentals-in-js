@@ -11,6 +11,9 @@
 <body>
     <h1 class="main_title">Main Learning Line</h1>
     <script>
+        function teste() {   // Uma função para testes de chamadas de funções
+            return console.log("Rodou");
+        }
         function abs(x) {        // Uma função para calcular o valor absoluto
             if (x >= 0)
                 return x;
@@ -42,7 +45,6 @@
             pre.appendChild(texto);
             p.appendChild(pre);
         }
-
         testeDiv("Div construida por JS");
 
         function forca(f, m, a) {   // Uma função para calcular a força
@@ -80,8 +82,35 @@
         }
         document.write(`<div class="standard"> <h1>Problema do ponto flutuante</h1>${centavos(0.1)}</div>`);
 
-        docment.write(`${later.toLocaleDateString()}`);
 
+        function escapeString() {
+            var text = "Como eu posso escrever \"entre\", numa string?";
+            return (`<div class="standard"> <h1>Escape string</h1>${text}</div>`);
+        }
+        document.write(escapeString());
+
+        function fatorialForm() {
+            var text = `<div class="standard" id="fatorialForm">
+            <h1>Fatorial Form</h1>
+            <input type="text" id="numeroFatorialForm" placeholder="Digite um número">
+            <button class="btn" onclick="fatorialFormCount()">Calcular</button>
+            </div>`;
+            return text;
+        }
+        function fatorialFormCount() {
+            p = document.getElementById("fatorialForm");
+            t = parseFloat(document.getElementById("numeroFatorialForm").value);
+            document.body.appendChild(p);
+            var result = fatorial(t);
+            var a = ` ${t}! = ${result}`;
+            var pre = document.createElement("p");
+            pre.id = "fatorialResult";
+            var text = document.createTextNode(a);
+            pre.appendChild(text);
+            p.appendChild(pre);
+        }
+        document.write(fatorialForm());
+        // document.write(fatorialFormCount());
     </script>
 </body>
 

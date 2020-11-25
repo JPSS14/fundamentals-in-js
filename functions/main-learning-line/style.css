@@ -13,6 +13,20 @@ body{
     --themeColor1: #0EC2CE;
 }
 
+.btn{
+    font-size: 1.2em;
+    padding: 2px 7px;
+    border-radius: 10px;
+    background: var(--themeColor1);
+    color: #111;
+    border: none;
+    margin: 5px;
+}
+.btn:hover{
+    cursor: pointer;
+    color: #fff;
+}
+
 /* MAIN TITLE */
 
 .main_title{
@@ -68,4 +82,17 @@ body{
     -webkit-text-stroke: 2px var(--themeColor1);
     color: #111;
     padding: 10px 0;
+}
+
+#numeroFatorialForm{
+    background: #111;
+    border-color: var(--themeColor1);
+    border-radius: 10px;
+    padding: 3px;
+    color: #fff;
+    font-size: 1em;
+    text-align: center;
+}
+#fatorialResult{
+    text-align: center;
 }
