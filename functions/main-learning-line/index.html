@@ -171,14 +171,29 @@
         }
         document.write(`<div class="standard"><h1>Prerímetro do quadrado</h1> ${perimetroQuadrado(8)}m </div>`);
 
-        function equacao(x, numero, numero2){
+        function equacao(x, numero, numero2){   // equação simples
             return (`x = ${numero2 - numero}`);
         }
         document.write(`<div class="standard"> <h1>Equação do 1º</h1> ${equacao("a",78,93)}</div>`);
 
+        function equacaoSpecial(x){            // equação utilizando string
+            const numero = 10;
+            const numero2 = 5;
+            const variavel = x.slice(1, x.length);
+            return `${x} + ${numero} = ${numero2} <br> ${x} = ${numero2} - ${numero} <br> x = ${numero2 - numero} / ${variavel} <br> x = ${(numero2 - numero) / variavel}`;
+        }
+        document.write(`<div class="standard"><h1>Equação especial</h1> ${equacaoSpecial(`x5`)} </div>`);
+
         // function equacaoForm(){
-        //     let 
+        //     const text = `<div class="standard">
+        //     <h1>Equação Form</h1>
+        //     <input type="text" id="numeroEquacao" class="input_standard">
+        //     <button class="btn">Calcular</button>
+        //     </div>`;
+        //     return text;
         // }
+        // document.write(equacaoForm());
+
     </script>
 </body>
 
