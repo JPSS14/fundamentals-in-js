@@ -93,6 +93,16 @@ body{
     font-size: 1em;
     text-align: center;
 }
+.input_standard_small{
+    background: #111;
+    border-color: var(--themeColor1);
+    border-radius: 10px;
+    padding: 3px;
+    color: #fff;
+    font-size: 1em;
+    text-align: center;
+    width: 50px;
+}
 #fatorialResult, #decimalBinarioResult{
     flex-basis: 100%;
     text-align: center;

@@ -140,6 +140,36 @@
             form.appendChild(pre);
         }
         document.write(decimalBinarioForm());
+
+        //INTERAÇÂO COM BOTÃO AINDA EM FASE DE TESTES E ESTUDO!
+        // function menosButton() {
+        //     var numero = document.querySelector("#numeroButtonInteracao").value;
+        //     console.log(numero);
+        //     numero.value -= parseFloat(1);
+        //     console.log(numero);
+        //     return numero;
+        // }
+
+        // function buttonInteracao() {
+        //     var text = `<div class="standard">
+        //     <h1>Interação com botão</h1>
+        //     <button class="btn" id="menosButton" onclick="menosButton()">-</button>
+        //     <input class="input_standard_small" type="text" id="numeroButtonInteracao" value=0>
+        //     <button class="btn" id="maisButton">+</button>
+        //     </div>`;
+        //     return text;
+        // }
+        // document.write(buttonInteracao());
+
+        function areaQuadrado(lado){    // square area
+            return lado*lado;
+        }
+        document.write(`<div class="standard"><h1>Área do quadrado</h1> ${areaQuadrado(8)}m² </div>`);
+
+        function perimetroQuadrado(lado){   // square perimeter
+            return lado*4;
+        }
+        document.write(`<div class="standard"><h1>Prerímetro do quadrado</h1> ${perimetroQuadrado(8)}m </div>`);
     </script>
 </body>
 
