@@ -39,8 +39,8 @@ body{
 #hello{
     display: flex;
     flex-wrap: wrap;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 295px;
+    max-width: 295px;
     background: #111;
     color: #fff;
     justify-content: center;
@@ -48,7 +48,7 @@ body{
     align-items: center;
     margin: 5px;
     border-radius: 5px;
-    border-left: solid 7px var(--themeColor1);
+    border-left: solid 10px var(--themeColor1);
     padding: 10px;
 }
 #hello h1{
@@ -63,8 +63,8 @@ body{
 .standard{
     display: flex;
     flex-wrap: wrap;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 295px;
+    max-width: 295px;
     background: #111;
     color: #fff;
     justify-content: center;
