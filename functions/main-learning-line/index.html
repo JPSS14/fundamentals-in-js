@@ -161,28 +161,30 @@
         // }
         // document.write(buttonInteracao());
 
-        function areaQuadrado(lado){    // square area
-            return lado*lado;
+        function areaQuadrado(lado) {    // square area
+            return lado * lado;
         }
         document.write(`<div class="standard"><h1>Área do quadrado</h1> ${areaQuadrado(8)}m² </div>`);
 
-        function perimetroQuadrado(lado){   // square perimeter
-            return lado*4;
+        function perimetroQuadrado(lado) {   // square perimeter
+            return lado * 4;
         }
         document.write(`<div class="standard"><h1>Prerímetro do quadrado</h1> ${perimetroQuadrado(8)}m </div>`);
 
-        function equacao(x, numero, numero2){   // equação simples
+        function equacao(x, numero, numero2) {   // equação simples
             return (`x = ${numero2 - numero}`);
         }
-        document.write(`<div class="standard"> <h1>Equação do 1º</h1> ${equacao("a",78,93)}</div>`);
+        document.write(`<div class="standard"> <h1>Equação do 1º</h1> ${equacao("a", 78, 93)}</div>`);
 
-        function equacaoSpecial(x){            // equação utilizando string
+        function equacaoSpecial(x) {            // equação utilizando string
             const numero = 10;
             const numero2 = 5;
             const variavel = x.slice(1, x.length);
             return `${x} + ${numero} = ${numero2} <br> ${x} = ${numero2} - ${numero} <br> x = ${numero2 - numero} / ${variavel} <br> x = ${(numero2 - numero) / variavel}`;
         }
         document.write(`<div class="standard"><h1>Equação especial</h1> ${equacaoSpecial(`x5`)} </div>`);
+
+
 
         // function equacaoForm(){
         //     const text = `<div class="standard">
@@ -194,6 +196,59 @@
         // }
         // document.write(equacaoForm());
 
+        function cep() {
+            const text = `<div class="standard">
+            <h1>CEP API</h1>
+            <input type="text" id="cep" class="input_standard" maxlength="9">
+            <button class="btn" onclick="cepApi()">Calcular</button>
+            <input type="text" class="input_standard" id="logradouro">
+            <input type="text" class="input_standard" id="bairro">
+            <input type="text" class="input_standard" id="localidade">
+            <input type="text" class="input_standard" id="uf">
+            </div>`;
+            return text;
+        }
+
+        function cepApi() {
+            const cep = document.querySelector("#cep");
+            console.log(cep.value);
+            const showData = (result)=>{
+                for(const campo in result){
+                    if(document.querySelector(`#${campo}`)){
+                        document.querySelector(`#${campo}`).value = result[campo];
+                    }
+                }
+            }
+
+            cep.addEventListener("blur", (e) => {
+                let search = cep.value.replace("-", "");
+                const options = {
+                    method: "GET",
+                    mode: "cors",
+                    cache: "default"
+                }
+                fetch(`https://viacep.com.br/ws/${search}/json/`, options)
+                    .then(response => {
+                        response.json()
+                        .then(data => showData(data))
+                    })
+                    .cathc(e => console.log("Deu erro: " + e.message));
+                    console.log(cep.value);
+            });
+        }
+        document.write(cep());
+
+        function dataAtualizada(){
+
+            const data = new Date();
+
+            const text = `<div class="standard">
+            <h1>Data</h1>
+            <p>${data}</p>
+            `;
+            return text;
+        }
+        document.write(dataAtualizada());
     </script>
 </body>
 
